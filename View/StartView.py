@@ -1,5 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Controller.StartController import StartController
+
+
 class StartView(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -7,6 +10,9 @@ class StartView(object):
         self.pushButton = QtWidgets.QPushButton(Form)
         self.pushButton.setGeometry(QtCore.QRect(760, 500, 400, 100))
         self.pushButton.setObjectName("pushButton")
+
+        startController = StartController()
+        self.pushButton.clicked.connect(startController.gotToPhoneInput)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
