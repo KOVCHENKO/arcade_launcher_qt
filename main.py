@@ -1,28 +1,13 @@
-import sys
-from PyQt5 import QtGui, QtCore
-from PyQt5.QtWidgets import QWidget, QPushButton, QApplication
+from PyQt5 import QtWidgets
 
+from View.StartView import StartView
 
-class mainUI(QWidget):
-    def __init__(self):
-        super(mainUI, self).__init__()
-        self.initUI()
-
-    def initUI(self):
-        self.showFullScreen()
-
-        qbtn = QPushButton('Quit')
-        qbtn.clicked.connect(QtCore.QCoreApplication.quit)
-        qbtn.move(50, 50)
-        self.button = qbtn
-        qbtn.show()
-
-def main():
-    app = QApplication(sys.argv)
-    window = mainUI()
-    window.__init__()
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    StartForm = QtWidgets.QWidget()
+    ui = StartView()
+    ui.setupUi(StartForm)
+    StartForm.showFullScreen()
+    StartForm.show()
     sys.exit(app.exec_())
-
-
-if __name__ == '__main__':
-    main()
