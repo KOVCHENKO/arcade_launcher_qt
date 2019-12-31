@@ -10,28 +10,16 @@ class PhoneInputView(QtWidgets.QWidget):
 
         layout = QtWidgets.QGridLayout()
 
-        self.line_edit = QtWidgets.QLineEdit()
+        self.line_edit = QtWidgets.QLineEdit(self)
+        self.line_edit.setGeometry(QtCore.QRect(760, 350, 400, 100))
         layout.addWidget(self.line_edit)
 
-        self.button = QtWidgets.QPushButton('CONTINUE')
+        self.button = QtWidgets.QPushButton(self)
         self.button.setGeometry(QtCore.QRect(760, 500, 400, 100))
+        self.button.setText("SEND")
 
         # self.button.clicked.connect(self.switch)
         layout.addWidget(self.button)
 
         self.showFullScreen()
         self.setLayout(layout)
-
-    # def setupUi(self, Form):
-    #     Form.setObjectName("Form")
-    #     Form.resize(1920, 1080)
-    #
-    #     self.pushButton = QtWidgets.QPushButton(Form)
-    #     self.pushButton.setGeometry(QtCore.QRect(760, 500, 400, 100))
-    #     self.pushButton.setObjectName("pushButton")
-    #     Form.setWindowTitle("PhoneInputForm")
-    #     self.pushButton.setText("CONTINUE")
-    #
-    #     Form.showFullScreen()
-    #     Form.hide()
-    #     Form.show()

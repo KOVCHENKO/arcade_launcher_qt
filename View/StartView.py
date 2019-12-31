@@ -11,9 +11,10 @@ class StartView(QtWidgets.QWidget):
 
         layout = QtWidgets.QGridLayout()
 
-        self.button = QtWidgets.QPushButton('Login')
+        self.button = QtWidgets.QPushButton(self)
         self.button.clicked.connect(self.show_phone_input_view)
         self.button.setGeometry(QtCore.QRect(760, 500, 400, 100))
+        self.button.setText("LOGIN")
 
         layout.addWidget(self.button)
 
@@ -22,15 +23,3 @@ class StartView(QtWidgets.QWidget):
 
     def show_phone_input_view(self):
         self.switch_window.emit()
-
-    # def setupUi(self, Form):
-    #     self.pushButton = QtWidgets.QPushButton(Form)
-    #     self.pushButton.setGeometry(QtCore.QRect(760, 500, 400, 100))
-    #     self.pushButton.setObjectName("pushButton")
-    #
-    #     self.startController.previousForm = Form
-    #     self.pushButton.clicked.connect(self.startController.saySomething)
-    #     self.pushButton.setText("START")
-    #     Form.setWindowTitle("START FORM")
-    #     Form.showFullScreen()
-    #     Form.show()
