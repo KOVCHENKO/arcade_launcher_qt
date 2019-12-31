@@ -2,11 +2,10 @@ import sys
 
 from PyQt5 import QtWidgets
 
-from View.StartView import StartView
+from Controller.StartController import StartController
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    StartForm = QtWidgets.QWidget()
-    ui = StartView()
-    ui.setupUi(StartForm)
+    controller = StartController()
+    controller.show_form()
     sys.exit(app.exec_())
