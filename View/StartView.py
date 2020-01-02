@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtWidgets
 
 
 class StartView(QtWidgets.QWidget):
-    switch_window = QtCore.pyqtSignal()
+    switchWindow = QtCore.pyqtSignal()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -22,4 +22,4 @@ class StartView(QtWidgets.QWidget):
         self.setLayout(layout)
 
     def show_phone_input_view(self):
-        self.switch_window.emit()
+        self.switchWindow.emit()

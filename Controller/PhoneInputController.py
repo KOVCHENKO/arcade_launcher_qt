@@ -2,15 +2,18 @@ from View.PhoneInputView import PhoneInputView
 
 
 class PhoneInputController:
+    phoneNumberText: str
+    phoneInputView: PhoneInputView
+
     def __init__(self):
-        pass
+        self.phoneInputView = PhoneInputView()
 
     def show_form(self):
-        self.phoneInputView = PhoneInputView()
-        self.phoneInputView.send_phone_from_text_element_event.connect(self.send_phone_number)
+        self.phoneInputView.sendPhoneFromTextElementEvent.connect(self.send_phone_number)
         self.phoneInputView.show()
 
     def send_phone_number(self):
-        phone_number_text = self.phoneInputView.line_edit.text()
+        self.phoneNumberText = self.phoneInputView.line_edit.text()
+
         print("phone number has been sent")
-        print(phone_number_text)
+        print(self.phoneNumberText)

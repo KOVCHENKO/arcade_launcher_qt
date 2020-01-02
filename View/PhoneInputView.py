@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtWidgets
 
 
 class PhoneInputView(QtWidgets.QWidget):
-    send_phone_from_text_element_event = QtCore.pyqtSignal()
+    sendPhoneFromTextElementEvent = QtCore.pyqtSignal()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -26,4 +26,4 @@ class PhoneInputView(QtWidgets.QWidget):
         self.setLayout(layout)
 
     def send_phone_from_text_element(self):
-        self.send_phone_from_text_element_event.emit()
+        self.sendPhoneFromTextElementEvent.emit()
