@@ -17,4 +17,4 @@ class PhoneInputController:
 
     def send_phone_number(self):
         self.phoneNumberText = self.phoneInputView.line_edit.text()
-        self.phoneInputService = self.phoneInputService.send_phone(self.phoneNumberText)
+        self.phoneInputService = self.phoneInputService.resolve_phone_request(self.phoneNumberText)

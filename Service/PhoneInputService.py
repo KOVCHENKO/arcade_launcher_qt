@@ -7,11 +7,18 @@ from Utility.application_config import remote_host
 class PhoneInputService:
     def send_phone(self, phone_number: str):
         phone_data = {
-            'phone': phone_number
+            'phone': phone_number,
+            # stub for response
+            'response': 'success'
         }
 
         request = requests.post(remote_host + 'post', data=phone_data)
         json_response = request.text
 
-        response = json.loads(json_response)
-        print(response.get('json'))
+        return json.loads(json_response)
+
+    def resolve_phone_request(self, phone_number: str):
+        response = self.send_phone(phone_number)
+
+        if response.get('json').get('response') == 'success':
+            print('success')
