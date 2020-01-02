@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtWidgets
 
 
 class PhoneInputView(QtWidgets.QWidget):
-    switch_window = QtCore.pyqtSignal(str)
+    send_phone_from_text_element_event = QtCore.pyqtSignal()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -15,6 +15,7 @@ class PhoneInputView(QtWidgets.QWidget):
         layout.addWidget(self.line_edit)
 
         self.button = QtWidgets.QPushButton(self)
+        self.button.clicked.connect(self.send_phone_from_text_element)
         self.button.setGeometry(QtCore.QRect(760, 500, 400, 100))
         self.button.setText("SEND")
 
@@ -23,3 +24,6 @@ class PhoneInputView(QtWidgets.QWidget):
 
         self.showFullScreen()
         self.setLayout(layout)
+
+    def send_phone_from_text_element(self):
+        self.send_phone_from_text_element_event.emit()

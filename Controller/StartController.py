@@ -1,3 +1,4 @@
+from Controller.PhoneInputController import PhoneInputController
 from View.PhoneInputView import PhoneInputView
 from View.StartView import StartView
 
@@ -12,6 +13,6 @@ class StartController:
         self.startView.show()
 
     def show_phone_input(self):
-        self.phoneInputView = PhoneInputView()
         self.startView.close()
-        self.phoneInputView.show()
+        self.phone_input_controller = PhoneInputController()
+        self.phone_input_controller.show_form()
