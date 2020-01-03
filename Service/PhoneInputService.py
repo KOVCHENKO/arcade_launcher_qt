@@ -20,5 +20,4 @@ class PhoneInputService:
     def resolve_phone_request(self, phone_number: str):
         response = self.send_phone(phone_number)
 
-        if response.get('json').get('response') == 'success':
-            print('success')
+        return response.get('json').get('response') == 'success'
