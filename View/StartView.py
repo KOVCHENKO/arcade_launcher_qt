@@ -7,6 +7,14 @@ class StartView(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         self.setWindowTitle('Start View')
+        self.setObjectName("StartWindow")
+        self.setStyleSheet(
+            """
+            #StartWindow {
+                background-image: url(resources/start_background.jpg)
+            }
+            """
+        )
         self.resize(1920, 1080)
 
         layout = QtWidgets.QGridLayout()
