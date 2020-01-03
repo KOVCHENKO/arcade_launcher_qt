@@ -7,14 +7,6 @@ class StartView(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         self.setWindowTitle('Start View')
-        self.setObjectName("StartWindow")
-        self.setStyleSheet(
-            """
-            #StartWindow {
-                background-image: url(resources/start_background.jpg)
-            }
-            """
-        )
         self.resize(1920, 1080)
 
         layout = QtWidgets.QGridLayout()
@@ -24,6 +16,21 @@ class StartView(QtWidgets.QWidget):
         self.button.setGeometry(QtCore.QRect(760, 500, 400, 100))
         self.button.setText("LOGIN")
 
+        self.setObjectName("StartWindow")
+        self.button.setObjectName("LoginButton")
+
+        self.liner = QtWidgets.QFrame()
+        self.liner.setGeometry(QtCore.QRect(0, 0, 400, 100))
+        self.liner.setObjectName("Liner")
+        self.liner.setStyleSheet(
+            """
+            #Liner {
+                background-image: url(resources/start_background.jpg);
+            }
+            """
+        )
+
+        layout.addWidget(self.liner)
         layout.addWidget(self.button)
 
         self.showFullScreen()
